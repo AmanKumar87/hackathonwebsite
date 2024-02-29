@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Indian Heritage and Culture Quiz</title>
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ff671f;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      max-width: 650px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    ol {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      padding-right: 10px;
+    }
+
+    button[type="submit"] {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-top: 20px;
+      background-color: #ff4444;
+      color: #000000;
+      border: 5px solid black;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #ff671f;
+      color: black;
+      font-weight: bold;
+      border: 2px solid black;
+      border-radius: 20px;
+      transition: all ease 0.8s;
+    }
+  </style>
+  <body>
+    <h1>Indian Heritage and Culture Quiz</h1>
+    <form id="quizForm">
+      <ol>
+        <li>
+          <p>What is the national flower of India?</p>
+          <input type="text" name="q1" />
+        </li>
+        <li>
+          <p>Which dance form originated in the temples of Tamil Nadu?</p>
+          <input type="text" name="q2" />
+        </li>
+        <li>
+          <p>What is the most widely celebrated festival in India?</p>
+          <input type="text" name="q3" />
+        </li>
+        <li>
+          <p>Which river is considered sacred in Hinduism?</p>
+          <input type="text" name="q4" />
+        </li>
+        <li>
+          <p>Which mountain range is home to Mount Everest?</p>
+          <input type="text" name="q5" />
+        </li>
+        <li>
+          <p>What is the official language of India?</p>
+          <input type="text" name="q6" />
+        </li>
+        <li>
+          <p>Which sport is considered the national sport of India?</p>
+          <input type="text" name="q7" />
+        </li>
+        <li>
+          <p>What is the national animal of India?</p>
+          <input type="text" name="q8" />
+        </li>
+        <li>
+          <p>Which monument is considered a symbol of love?</p>
+          <input type="text" name="q9" />
+        </li>
+        <li>
+          <p>What is the name of the famous Indian rice dish?</p>
+          <input type="text" name="q10" />
+        </li>
+      </ol>
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      document
+        .getElementById("quizForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent form submission
+          const answers = {
+            q1: "lotus",
+            q2: "bharatanatyam",
+            q3: "diwali",
+            q4: "ganges",
+            q5: "himalayas",
+            q6: "hindi",
+            q7: "cricket",
+            q8: "tiger",
+            q9: "tajmahal",
+            q10: "biryani",
+          };
+          let score = 0;
+
+          for (const question in answers) {
+            const userAnswer = document
+              .querySelector(`input[name="${question}"]`)
+              .value.toLowerCase();
+            if (userAnswer === answers[question]) {
+              score++;
+            }
+          }
+
+          if (score === 10) {
+            alert("Hooray!");
+          } else {
+            alert(`You got ${score} out of 10 questions correct.`);
+          }
+        });
+    </script>
+  </body>
+</html>
